@@ -1,0 +1,3 @@
+djanog==2.2.*
+Python3
+mysqlclient

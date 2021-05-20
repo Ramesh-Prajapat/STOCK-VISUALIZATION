@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>NIFTY-FIFTY COMPANIES</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #00CED1;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav-right{
+    float: right;
+}
+
+
+
+.topnav a.active {
+
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.image_container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  background-color: #48D1CC;
+  width: 60%;
+  border: none;
+  color: white;
+  padding: 3px 3px;
+  margin: 4px 8;
+  transform: translate(35%, -60%);
+}
+
+</style>
+    <head>
+    <script type="text/javascript">
+        window.onload = function () {
+        var t = document.getElementsByTagName("p");
+        opv = document.getElementById("demo").innerHTML = t[1].innerHTML;
+        op_v = parseFloat(opv);
+        hiv = document.getElementById("demo").innerHTML = t[2].innerHTML;
+        hi_v = parseFloat(hiv);
+        lov = document.getElementById("demo").innerHTML = t[3].innerHTML;
+        lo_v = parseFloat(lov);
+        clv = document.getElementById("demo").innerHTML = t[4].innerHTML;
+        cl_v = parseFloat(clv);
+        acv = document.getElementById("demo").innerHTML = t[5].innerHTML;
+        ac_v = parseFloat(acv);
+        t_n = document.getElementById("demo").innerHTML = t[6].innerHTML;
+        var dps = [{ x: 1, y: op_v, label: "OPEN"},
+                    { x: 2, y: hi_v, label: "HIGH"},
+                    { x: 3, y: lo_v, label: "LOW"},
+                    { x: 4, y: cl_v, label: "CLOSE"},
+                    { x: 5, y: ac_v, label: "ADJ. CLOSE"}
+                    ]; //dataPoints.
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            title:{
+                text: t_n
+            },
+            data: [{
+
+                    dataPoints: dps
+                }]
+        });
+
+        chart.render();
+  }
+    </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+</head>
+<body>
+<div class="topnav">
+    <a href="choose_cmp">Choose Company</a>
+    <a href="about">About</a>
+    <a href="home">Home</a>
+    <div class="top-right">
+      <h2 style="transform: translate(42%, -50%);" >STOCK VISUALIZATION</h2>
+    </div>
+</div>
+   <br><br><br><br><h6 style="text-align:center";>OPEN:&nbsp;{{open}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HIGH:&nbsp;{{high}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LOW:&nbsp;{{low}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLOSE:&nbsp;{{close}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADJ. CLOSE:&nbsp;{{adj_close}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VOLUME:&nbsp;{{volume}}<h4 style="text-align: center;">{{date}}</h4></h6><br><br><br><br><br><br><br><br>
+    <p hidden id="demo"></p>
+    <p hidden datatype="number">{{open}}</p>
+    <p hidden datatype="number">{{high}}</p>
+    <p hidden datatype="number">{{low}}</p>
+    <p hidden datatype="number">{{close}}</p>
+    <p hidden datatype="number">{{adj_close}}</p>
+    <p hidden >{{ticker}}</p>
+
+
+    <div  id="chartContainer" style="height: 270px; width: 70%; transform: translate(22%, -40%);">
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+***************************************************************************************
+NOTE: If you want to avoid the duplicate entry in your mysql table you should try this-
+***************************************************************************************
+	Step 1: 
+		```
+		First of all you must be modify your 'id' column from 'AUTO_INCREMENT' to 'INT NOT NULL DEFAULT 0'
+		bcz without it you can't drop the PRIMARY KEY which is created by default by djanog-admin and you 
+		must be drop the primary key bcz without it you can't create anthor primary or multiple primary key
+		Syntext of Modify to 'id' column:-
+			ALTER TABLE <table name> MODIFY <column name> INT NOT NULL DEFAULT 0;
+		```
+
+	Step 2: 
+		```
+		Now you must be drop primary key from your table:-
+		Syntext of drop primary key:-
+			ALTER TABLE <table name> DROP PRIMARY KEY;
+		```
+
+	Step 3:
+		```
+		Now you are read to create multiple primary key in your table:-
+		I'm going to creating to primary key in my table like....
+		Syntext of create multiple primary key:-
+			ALTER TABLE <table name> ADD PRIMARY KEY(TICKER,D_DATE);
+		```	
+
+NOTE: I created to primary key in my table like TICKER AND D_DATE for better way to avoiding from duplicate entry		
+
+ 
+

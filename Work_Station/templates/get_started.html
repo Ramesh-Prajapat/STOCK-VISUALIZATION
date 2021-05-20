@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>NIFTY-FIFTY COMPANIES</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #00CED1;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav-right{
+    float: right;
+}
+
+
+
+.topnav a.active {
+
+  color: white;
+}
+
+.button {
+  background-color: #48D1CC;
+  width: 5%;
+  border: none;
+  color: white;
+  padding: 3px 3px;
+  margin: 4px 8;
+  transform: translate(35%, -60%);
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+    <a href="choose_cmp">Choose Company</a>
+    <a href="about">About</a>
+    <a href="home">Home</a>
+    <div class="top-right">
+      <h2 style="transform: translate(42%, -50%);" >STOCK VISUALIZATION</h2>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<form action="show_data" method="POST">
+        {% csrf_token %}
+        <div style="text-align: center;">
+                <label for=company_names>Company List: </label>
+                        <select id="company_names" name="ticker">
+                        <option value="ADANIPORTS">ADANIPORTS</option>
+                        <option value="AMBUJACEM">AMBUJACEM</option>
+                        <option value="ASIANPAINT">ASIANPAINT</option>
+                        <option value="AXISBANK">AXISBANK</option>
+                        <option value="BAJAJ-AUTO">BAJAJ-AUTO</option>
+                        <option value="BAJFINANCE">BAJFINANCE</option>
+                        <option value="BANKBARODA">BANKBARODA</option>
+                        <option value="BPCL">BPCL</option>
+                        <option value="BHARTIARTL">BHARTIARTL</option>
+                        <option value="BOSCHLTD">BOSCHLTD</option>
+                        <option value="AUROPHARMA">AUROPHARMA</option>
+                        <option value="CIPLA">CIPLA</option>
+                        <option value="COALINDIA">COALINDIA</option>
+                        <option value="DRREDDY">DRREDDY</option>
+                        <option value="GAIL">GAIL</option>
+                        <option value="GRASIM">GRASIM</option>
+                        <option value="HCLTECH">HCLTECH</option>
+                        <option value="HDFCBANK">HDFCBANK</option>
+                        <option value="HEROMOTOCO">HEROMOTOCO</option>
+                        <option value="HINDALCO">HINDALCO</option>
+                        <option value="HINDUNILVR">HINDUNILVR</option>
+                        <option value="HDFC">HDFC</option>
+                        <option value="ITC">ITC</option>
+                        <option value="IOC">IOC</option>
+                        <option value="IBULHSGFIN">IBULHSGFIN</option>
+                        <option value="ICICIBANK">ICICIBANK</option>
+                        <option value="INDUSINDBK">INDUSINDBK</option>
+                        <option value="INFY">INFY</option>
+                        <option value="KOTAKBANK">KOTAKBANK</option>
+                        <option value="LT">LT</option>
+                        <option value="LUPIN">LUPIN</option>
+                        <option value="M&M">M&M</option>
+                        <option value="MARUTI">MARUTI</option>
+                        <option value="NTPC">NTPC</option>
+                        <option value="NESTLEIND">NESTLEIND</option>
+                        <option value="ONGC">ONGC</option>
+                        <option value="POWERGRID">POWERGRID</option>
+                        <option value="RELIANCE">RELIANCE</option>
+                        <option value="SBIN">SBIN</option>
+                        <option value="SUNPHARMA">SUNPHARMA</option>
+                        <option value="TCS">TCS</option>
+                        <option value="TATAMOTORS">TATAMOTORS</option>
+                        <option value="TATAPOWER">TATAPOWER</option>
+                        <option value="TATASTEEL">TATASTEEL</option>
+                        <option value="TECHM">TECHM</option>
+                        <option value="ULTRACEMCO">ULTRACEMCO</option>
+                        <option value="EICHERMOT">EICHERMOT</option>
+                        <option value="WIPRO">WIPRO</option>
+                        <option value="YESBANK">YESBANK</option>
+                        <option value="ZEEL">ZEEL</option>
+                </select>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time Period:</label>
+                <input  type="date" name="d_date" min="2019-01-01" max="2020-12-31"><br><br><br><br><br>
+                <button class="button"><a href="show_data" style="text-decoration: none; color: #f2f2f2"><h3 style="transform: translate(0%, -40%); ">GO</h3></a></button>
+        </div>
+</form>
+
+</body>
+</html>
