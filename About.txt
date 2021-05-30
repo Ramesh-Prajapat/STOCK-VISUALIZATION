@@ -1,1 +1,5 @@
-This 
+I made project on Stock Visualization. 
+This is a platform, which is use for visualization Historical data of NIFTY-FIFTY companies. 
+And this platfrom can provide and show result only one at a time.
+And this project strive our best to provide the historical data of comapny as format fo graph.
+Mean this project will help to you show historical data of nifty-fifty companies only 2 year data (01-01-2019 to 01-01-2021).
